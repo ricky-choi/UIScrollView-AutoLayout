@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AEA5A7141F03ED7B000EDEF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA5A7131F03ED7B000EDEF1 /* AppDelegate.swift */; };
-		AEA5A7161F03ED7B000EDEF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA5A7151F03ED7B000EDEF1 /* ViewController.swift */; };
+		AEA5A7161F03ED7B000EDEF1 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA5A7151F03ED7B000EDEF1 /* ScrollViewController.swift */; };
 		AEA5A7191F03ED7B000EDEF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA5A7171F03ED7B000EDEF1 /* Main.storyboard */; };
 		AEA5A71B1F03ED7B000EDEF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEA5A71A1F03ED7B000EDEF1 /* Assets.xcassets */; };
 		AEA5A71E1F03ED7B000EDEF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA5A71C1F03ED7B000EDEF1 /* LaunchScreen.storyboard */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		AEA5A7101F03ED7B000EDEF1 /* Scroll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scroll.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA5A7131F03ED7B000EDEF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AEA5A7151F03ED7B000EDEF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AEA5A7151F03ED7B000EDEF1 /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		AEA5A7181F03ED7B000EDEF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEA5A71A1F03ED7B000EDEF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEA5A71D1F03ED7B000EDEF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				AEA5A7131F03ED7B000EDEF1 /* AppDelegate.swift */,
-				AEA5A7151F03ED7B000EDEF1 /* ViewController.swift */,
+				AEA5A7151F03ED7B000EDEF1 /* ScrollViewController.swift */,
 				AEA5A7171F03ED7B000EDEF1 /* Main.storyboard */,
 				AEA5A71A1F03ED7B000EDEF1 /* Assets.xcassets */,
 				AEA5A71C1F03ED7B000EDEF1 /* LaunchScreen.storyboard */,
@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					AEA5A70F1F03ED7B000EDEF1 = {
 						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -139,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEA5A7161F03ED7B000EDEF1 /* ViewController.swift in Sources */,
+				AEA5A7161F03ED7B000EDEF1 /* ScrollViewController.swift in Sources */,
 				AEA5A7141F03ED7B000EDEF1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,10 +274,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = EP53X3H2P3;
 				INFOPLIST_FILE = Scroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcid.Scroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "15c6a360-15a0-41b8-b6bf-a27508f87955";
+				PROVISIONING_PROFILE_SPECIFIER = AppcidWildcard;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,10 +291,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Scroll/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.appcid.Scroll;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,6 +322,7 @@
 				AEA5A7241F03ED7B000EDEF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

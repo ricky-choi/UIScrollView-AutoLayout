@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var contentViewHeightConstraint: NSLayoutConstraint!
     
     var minimumZoomLock = true
+    var fitScale: CGFloat = 1
     
     override func awakeFromNib() {
         image = UIImage(named: "sample.jpg")
@@ -74,7 +75,7 @@ class ViewController: UIViewController {
         
         let minWidthScale = scrollView.frameLayoutGuide.layoutFrame.size.width / image.size.width
         let minHeightScale = scrollView.frameLayoutGuide.layoutFrame.size.height / image.size.height
-        let minScale = min(minWidthScale, minHeightScale)
+        let minScale = min(minWidthScale, minHeightScale) * fitScale
         
         scrollView.minimumZoomScale = minScale
         scrollView.maximumZoomScale = 3

@@ -26,15 +26,17 @@ open class ScrollViewController: UIViewController {
     
     public var minimumZoomLock = true
     public var fitScale: CGFloat = 1
+    public var margins: CGFloat = 0
     
     override open func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .black
+        
         scrollView.delegate = self
-        scrollView.contentInsetAdjustmentBehavior = .never
+        scrollView.contentInsetAdjustmentBehavior = .automatic
         
         // setup scroll view
-        scrollView.backgroundColor = .black
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -43,7 +45,6 @@ open class ScrollViewController: UIViewController {
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
         // setup content background view, not content view
-        contentBackgroundView.backgroundColor = .black
         scrollView.addSubview(contentBackgroundView)
         contentBackgroundView.translatesAutoresizingMaskIntoConstraints = false
         contentBackgroundView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
@@ -102,8 +103,8 @@ open class ScrollViewController: UIViewController {
     private func invalidateContentSize(scale: CGFloat) {
         guard let contentView = contentView, contentView.intrinsicContentSize > CGSize.zero else { return }
         
-        contentBackgroundViewWidthConstraint.constant = max(scrollView.frameLayoutGuide.layoutFrame.size.width / scale, contentView.intrinsicContentSize.width)
-        contentBackgroundViewHeightConstraint.constant = max(scrollView.frameLayoutGuide.layoutFrame.size.height / scale, contentView.intrinsicContentSize.height)
+        contentBackgroundViewWidthConstraint.constant = max(scrollView.frameLayoutGuide.layoutFrame.size.width / scale, contentView.intrinsicContentSize.width + margins * 2)
+        contentBackgroundViewHeightConstraint.constant = max(scrollView.frameLayoutGuide.layoutFrame.size.height / scale, contentView.intrinsicContentSize.height + margins * 2)
     }
     
 }
